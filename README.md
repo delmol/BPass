@@ -101,6 +101,7 @@ We will generate a new seed from our master seed to create passwords with.
 We throw our seed back into our PBKDF2 function toget a new password seed. This time using our mnemonic as the password and salt.
 
 > Master seed: 9041c2e
+> 
 > Password seed: d634aff2d54ad209f3a6990be9022b6b8140d00cdf027fecc36a3691dfa25c2a6925b0c258100cf420e7f9d40544e203cb888a5c3d1b38a37de0d9c735c21be4
 
 Now, you might quite rightly ask what is the need for hashing yet another seed to generate passwords from? Honestly, I don't know. It was late at night when I was writing this program and I have no idea why I did it that way.
@@ -118,7 +119,9 @@ But, if you used the site name, or something similar, it would be very easy to r
 Obviously this is just a demo, but in a fully fledged GUI implementation that could quite easily be worked out.
 
 > SHA256( [Password Seed] + [Salt] ) = password
+> 
 > d634aff2d54ad209f... + "github"
+> 
 > Password: 5A4CD9ACE8435CCED64F3D85D9ED329D5EB4460A296A82095C328DC4E8442A80
 
 Not many service will accept a 64 character password, so BPass will cut down the password to 32 character
